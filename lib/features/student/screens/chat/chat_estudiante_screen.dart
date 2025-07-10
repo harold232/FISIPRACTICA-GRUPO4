@@ -127,7 +127,7 @@ class _ChatEstudianteScreenState extends State<ChatEstudianteScreen> {
     _disposeSocket(); // Limpiar socket existente si hay
 
     socket = IO.io(
-      '${dotenv.env['API_DOMAIN']}',
+      'https://fisipractica-backend.onrender.com',
       <String, dynamic>{
         'transports': ['websocket'],
         'autoConnect': true,

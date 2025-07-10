@@ -229,7 +229,7 @@ Estoy aquí para ayudarte con información sobre el proceso de selección en ${w
       setState(() => connectionStatus = ConnectionStatus.connecting);
 
       socket = IO.io(
-        '${dotenv.env['API_DOMAIN']}',
+        'https://fisipractica-backend.onrender.com',
         <String, dynamic>{
           'transports': ['websocket'],
           'autoConnect': true,
@@ -454,16 +454,17 @@ Puedes hacer clic en el botón "Comunicarme con un reclutador" que aparece debaj
       return;
     }
     if (!context.mounted) return;
-    
+
     // Información del chat para retornar al widget padre
     final chatInfo = {
       'recruiterId': widget.recruiter['user']['id'].toString(),
       'jobId': widget.jobId,
-      'recruiterName': '${widget.recruiter['user']['first_name']} ${widget.recruiter['user']['last_name']}',
+      'recruiterName':
+          '${widget.recruiter['user']['first_name']} ${widget.recruiter['user']['last_name']}',
       'chatId': chat['id'].toString(),
       'goToChat': true, // Flag para indicar que se debe navegar al chat
     };
-    
+
     // Retornar al widget padre con la información del chat
     Navigator.pop(context, chatInfo);
   }
