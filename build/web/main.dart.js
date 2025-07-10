@@ -29405,7 +29405,7 @@ s=p}while(true)switch(s){case 0:p=4
 k=t.N
 j=t.z
 s=7
-return A.x($.kg().xD("/auth/login",A.J(["email",a,"password",b,"role",c],k,k),A.mb(A.J(["Content-Type","application/json"],k,j)),j),$async$FE)
+return A.x($.kg().xD("https://fisipractica-backend.onrender.com/auth/login",A.J(["email",a,"password",b,"role",c],k,k),A.mb(A.J(["Content-Type","application/json"],k,j)),j),$async$FE)
 case 7:n=e
 m=A.aYt(J.a6(n.a,"access_token"))
 s=8
