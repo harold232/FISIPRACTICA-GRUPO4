@@ -18,7 +18,7 @@ class EstudiantesServices {
       final lastName = body['nombres'];
       String? token = await _sessionManager.getAuthToken();
       Response response = await dio.post(
-        '/student',
+        'https://fisipractica-backend.onrender.com/student',
         options: Options(
           headers: {
             'Authorization': 'Bearer $token',
@@ -63,7 +63,7 @@ class EstudiantesServices {
     try {
       String? token = await _sessionManager.getAuthToken();
       Response response = await dio.get(
-        '/student',
+        'https://fisipractica-backend.onrender.com/student',
         options: Options(
           headers: {
             'Authorization': 'Bearer $token',

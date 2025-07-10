@@ -22,7 +22,7 @@ class ReclutadoresServices {
       final fechaInicio = body['position_start_date'];
       String? token = await SessionManager().getAuthToken();
       Response response = await dio.post(
-        '/recruiter',
+        'https://fisipractica-backend.onrender.com/recruiter',
         options: Options(
           headers: {
             'Authorization': 'Bearer $token',
@@ -54,7 +54,7 @@ class ReclutadoresServices {
     try {
       String? token = await SessionManager().getAuthToken();
       Response response = await dio.get(
-        '/recruiter/$id',
+        'https://fisipractica-backend.onrender.com/recruiter/$id',
         options: Options(
           headers: {
             'Authorization': 'Bearer $token',
@@ -72,7 +72,7 @@ class ReclutadoresServices {
     try {
       String? token = await SessionManager().getAuthToken();
       Response response = await dio.get(
-        '/recruiter',
+        'https://fisipractica-backend.onrender.com/recruiter',
         options: Options(
           headers: {
             'Authorization': 'Bearer $token',
@@ -138,7 +138,7 @@ class ReclutadoresServices {
 
       // Realizamos la solicitud POST
       Response response = await dio.post(
-        '/job', // URL para crear la vacante
+        'https://fisipractica-backend.onrender.com/job', // URL para crear la vacante
         options: Options(
           headers: {
             'Authorization': 'Bearer $token',
@@ -160,7 +160,7 @@ class ReclutadoresServices {
     try {
       String? token = await SessionManager().getAuthToken();
       Response response = await dio.get(
-        '/recruiter/$id',
+        'https://fisipractica-backend.onrender.com/recruiter/$id',
         options: Options(
           headers: {
             'Authorization': 'Bearer $token',
@@ -192,7 +192,7 @@ class ReclutadoresServices {
       logger.d(body);
       String? token = await SessionManager().getAuthToken();
       Response response = await dio.patch(
-        '/recruiter/$id',
+        'https://fisipractica-backend.onrender.com/recruiter/$id',
         options: Options(
           headers: {
             'Authorization': 'Bearer $token',

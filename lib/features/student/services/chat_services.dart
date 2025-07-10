@@ -12,7 +12,7 @@ class ChatServices {
     try {
       final token = await _sessionManager.getAuthToken();
       final response = await dio.post(
-        '/chat',
+        'https://fisipractica-backend.onrender.com/chat',
         options: Options(
           headers: {
             'Content-Type': 'application/json',

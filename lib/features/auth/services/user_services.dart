@@ -38,7 +38,7 @@ class UserServices {
       String? token = await _sessionManager.getAuthToken();
       // await SessionManager().destroy();
       /* Response response =  */ await dio.post(
-        '/auth/logout',
+        'https://fisipractica-backend.onrender.com/auth/logout',
         options: Options(
           headers: {
             'Authorization': 'Bearer $token',

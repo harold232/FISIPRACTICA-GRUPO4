@@ -13,7 +13,7 @@ class PostulacionesServices {
       String? token = await _sessionManager.getAuthToken();
       Map<String, dynamic> user = await _sessionManager.getUser();
       await dio.post(
-        '/application',
+        'https://fisipractica-backend.onrender.com/application',
         data: {
           'job_id': ofertaId,
           'student_id': user['student_id'],

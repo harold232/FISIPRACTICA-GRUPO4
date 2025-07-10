@@ -11,7 +11,7 @@ class MensajesServices {
       String? token = await SessionManager().getAuthToken();
       var user = await SessionManager().getUser();
       Response response = await dio.get(
-        '/message/$chatId',
+        'https://fisipractica-backend.onrender.com/message/$chatId',
         options: Options(
           headers: {
             'Authorization': 'Bearer $token',
@@ -28,8 +28,9 @@ class MensajesServices {
             'is_me': mensaje['user_id'] == user['sub'],
             'user_id': mensaje['user_id'],
             'fecha': mensaje['create_date'],
-            'estudiante_id':
-                mensaje['chat'] != null ? mensaje['chat']['student']['id'] : null,
+            'estudiante_id': mensaje['chat'] != null
+                ? mensaje['chat']['student']['id']
+                : null,
             'reclutador_id': mensaje['chat'] != null
                 ? mensaje['chat']['recruiter']['id']
                 : null,
@@ -50,7 +51,7 @@ class MensajesServices {
     try {
       String? token = await SessionManager().getAuthToken();
       Response response = await dio.get(
-        '/chat/$userId?type=$type',
+        'https://fisipractica-backend.onrender.com/chat/$userId?type=$type',
         options: Options(
           headers: {
             'Authorization': 'Bearer $token',

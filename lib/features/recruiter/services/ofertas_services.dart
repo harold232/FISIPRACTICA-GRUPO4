@@ -10,7 +10,7 @@ class OfertasServices {
     try {
       String? token = await SessionManager().getAuthToken();
       Response response = await dio.get(
-        '/job',
+        'https://fisipractica-backend.onrender.com/job',
         options: Options(
           headers: {
             'Authorization': 'Bearer $token',
@@ -53,7 +53,7 @@ class OfertasServices {
     try {
       String? token = await SessionManager().getAuthToken();
       Response response = await dio.get(
-        '/job/recruiter/$recruiterId',
+        'https://fisipractica-backend.onrender.com/job/recruiter/$recruiterId',
         options: Options(
           headers: {
             'Authorization': 'Bearer $token',
